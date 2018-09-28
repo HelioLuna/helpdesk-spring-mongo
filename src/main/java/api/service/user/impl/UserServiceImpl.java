@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Page<User> findAll(int page, int count) {
-        Pageable pageable = new PageRequest.of(page, count);
+        Pageable pageable = new PageRequest(page, count);
         return this.userRepository.findAll(pageable);
     }
 }
